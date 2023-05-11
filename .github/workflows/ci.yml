@@ -6,6 +6,7 @@ env:
   COUNTRY_CODE: ${{ vars.COUNTRY_CODE }}
   LOCALE_DEFAULT: ${{ vars.LOCALE_DEFAULT }}
   DEFAULT_CURRENCY: ${{ vars.DEFAULT_CURRENCY }}
+  SENSITIVE_DATA: ${{ vars.SENSITIVE_DATA }}
 
 jobs:
   build:
@@ -21,4 +22,5 @@ jobs:
           echo COUNTRY_CODE=$COUNTRY_CODE
           echo DEFAULT_CURRENCY=$DEFAULT_CURRENCY
           echo LOCALE_DEFAULT=$LOCALE_DEFAULT
+          echo SENSITIVE_DATA=$SENSITIVE_DATA
 

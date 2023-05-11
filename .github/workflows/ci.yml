@@ -11,7 +11,7 @@ jobs:
   build:
     strategy: 
       matrix: 
-        country: ['DE', 'FR', 'AT', 'CH']
+        country: ['DE', 'FR', 'AT', 'CH', 'INT', 'IT', 'NL', 'SE', 'UK', 'US']
     environment: ${{ matrix.country }} 
     runs-on: ubuntu-latest
 

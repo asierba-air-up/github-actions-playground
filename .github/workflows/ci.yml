@@ -4,6 +4,8 @@ on: [push]
 
 env:
   COUNTRY_CODE: ${{ vars.COUNTRY_CODE }}
+  LOCALE_DEFAULT: ${{ vars.LOCALE_DEFAULT }}
+  DEFAULT_CURRENCY: ${{ vars.DEFAULT_CURRENCY }}
 
 jobs:
   build:
@@ -14,5 +16,8 @@ jobs:
       - name: Hello world!
         run: echo "Hello world from github actions! 🚀"
       - name: print env vars
-        run: echo COUNTRYCODE=$COUNTRY_CODE
+        run: | 
+          echo COUNTRY_CODE=$COUNTRY_CODE
+          echo DEFAULT_CURRENCY=$DEFAULT_CURRENCY
+          echo LOCALE_DEFAULT=$LOCALE_DEFAULT
 

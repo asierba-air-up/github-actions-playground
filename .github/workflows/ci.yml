@@ -9,13 +9,16 @@ env:
 
 jobs:
   build:
+    strategy: 
+      matrix: 
+        country: ['DE', 'FR']
     environment: DE
     runs-on: ubuntu-latest
 
     steps:
       - name: Hello world!
         run: echo "Hello world from github actions! 🚀"
-      - name: print env vars
+      - name: print env vars for ${{ matrix.country }} 
         run: | 
           echo COUNTRY_CODE=$COUNTRY_CODE
           echo DEFAULT_CURRENCY=$DEFAULT_CURRENCY

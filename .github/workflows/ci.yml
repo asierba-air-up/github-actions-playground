@@ -16,8 +16,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Hello world!
-        run: echo "Hello world from github actions! 🚀"
       - name: print env vars for ${{ matrix.country }} 
         run: | 
           echo COUNTRY_CODE=$COUNTRY_CODE

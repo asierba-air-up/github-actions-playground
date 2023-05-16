@@ -14,7 +14,7 @@ jobs:
     strategy: 
       matrix: 
         country: ['DE', 'FR', 'AT', 'CH', 'INT', 'IT', 'NL', 'SE', 'UK', 'US']
-    environment: 'Shared'
+    environment: ${{ matrix.country }} 
     runs-on: ubuntu-latest
 
     steps:

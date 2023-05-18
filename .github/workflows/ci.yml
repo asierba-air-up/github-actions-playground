@@ -2,11 +2,30 @@ name: test workflow
 
 on: [push]
 
+env:
+  COUNTRY_CODE: ${{ vars.COUNTRY_CODE }}
+  LOCALE_DEFAULT: ${{ vars.LOCALE_DEFAULT }}
+  DEFAULT_CURRENCY: ${{ vars.DEFAULT_CURRENCY }}
+  SENSITIVE_DATA: ${{ vars.SENSITIVE_DATA }}
+  NEXT_REVALIDATE: ${{ vars.NEXT_REVALIDATE }}
+
 jobs:
   build:
+    strategy: 
+      matrix: 
+        country: ['DE', 'FR', 'AT', 'CH', 'INT', 'IT', 'NL', 'SE', 'UK', 'US']
+    environment: ${{ matrix.country }} 
     runs-on: ubuntu-latest
 
     steps:
-      - name: Hello world!
-        run: echo "Hello world from github actions! 🚀"
+      - name: print env vars for ${{ matrix.country }} 
+        run: | 
+          echo COUNTRY_CODE=$COUNTRY_CODE
+          echo DEFAULT_CURRENCY=$DEFAULT_CURRENCY
+          echo LOCALE_DEFAULT=$LOCALE_DEFAULT
+          echo SENSITIVE_DATA=$SENSITIVE_DATA
+          echo NEXT_REVALIDATE=$NEXT_REVALIDATE
 
+  print-envs:
+      uses: ./.github/workflows/print-envs.yml
+      secrets: inherit

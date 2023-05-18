@@ -1,0 +1,25 @@
+name: print-envs
+
+on:
+  workflow_call:
+
+#env:
+#  COUNTRY_CODE: ${{ vars.COUNTRY_CODE }}
+#  LOCALE_DEFAULT: ${{ vars.LOCALE_DEFAULT }}
+#  DEFAULT_CURRENCY: ${{ vars.DEFAULT_CURRENCY }}
+#  SENSITIVE_DATA: ${{ vars.SENSITIVE_DATA }}
+#  NEXT_REVALIDATE: ${{ vars.NEXT_REVALIDATE }}
+
+
+jobs:
+  print-envs:
+    runs-on: ubuntu-latest
+    environment: 'DE'
+    steps:
+      - name: print env vars for 'DE'
+        run: |
+          echo COUNTRY_CODE=$COUNTRY_CODE
+          echo DEFAULT_CURRENCY=$DEFAULT_CURRENCY
+          echo LOCALE_DEFAULT=$LOCALE_DEFAULT
+          echo SENSITIVE_DATA=$SENSITIVE_DATA
+          echo NEXT_REVALIDATE=$NEXT_REVALIDATE

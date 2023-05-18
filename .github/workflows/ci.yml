@@ -19,13 +19,4 @@ jobs:
           echo title: ${{ github.event.pull_request.title }}
           echo id: ${{ github.event.pull_request.id }}
           echo "--message ${{ github.event.pull_request.title }}  --alias=${{ github.event.pull_request.id }}"
-          
-
-  print_title_of_pr:
-    runs-on: ubuntu-20.04
-    steps:
-    - name : Print Title of PR
-      run: echo The Title of your PR is ${{ github.event.pull_request.title }}
-
-          
-
+        

@@ -28,3 +28,4 @@ jobs:
 
   print-envs:
       uses: ./.github/workflows/print-envs.yml
+      secrets: inherit

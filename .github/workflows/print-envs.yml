@@ -3,12 +3,12 @@ name: print-envs
 on:
   workflow_call:
 
-env:
-  COUNTRY_CODE: ${{ vars.COUNTRY_CODE }}
-  LOCALE_DEFAULT: ${{ vars.LOCALE_DEFAULT }}
-  DEFAULT_CURRENCY: ${{ vars.DEFAULT_CURRENCY }}
-  SENSITIVE_DATA: ${{ vars.SENSITIVE_DATA }}
-  NEXT_REVALIDATE: ${{ vars.NEXT_REVALIDATE }}
+#env:
+#  COUNTRY_CODE: ${{ vars.COUNTRY_CODE }}
+#  LOCALE_DEFAULT: ${{ vars.LOCALE_DEFAULT }}
+#  DEFAULT_CURRENCY: ${{ vars.DEFAULT_CURRENCY }}
+#  SENSITIVE_DATA: ${{ vars.SENSITIVE_DATA }}
+#  NEXT_REVALIDATE: ${{ vars.NEXT_REVALIDATE }}
 
 
 jobs:

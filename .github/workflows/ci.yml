@@ -26,3 +26,5 @@ jobs:
           echo SENSITIVE_DATA=$SENSITIVE_DATA
           echo NEXT_REVALIDATE=$NEXT_REVALIDATE
 
+  print-envs:
+      uses: ./.github/workflows/print-envs.yml

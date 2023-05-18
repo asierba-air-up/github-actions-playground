@@ -1,0 +1,17 @@
+name: print-envs
+
+on:
+  workflow_call:
+
+
+jobs:
+  print-envs:
+    runs-on: ubuntu-latest-16-cores
+    steps:
+      - name: print env vars for ${{ matrix.country }}
+        run: |
+          echo COUNTRY_CODE=$COUNTRY_CODE
+          echo DEFAULT_CURRENCY=$DEFAULT_CURRENCY
+          echo LOCALE_DEFAULT=$LOCALE_DEFAULT
+          echo SENSITIVE_DATA=$SENSITIVE_DATA
+          echo NEXT_REVALIDATE=$NEXT_REVALIDATE

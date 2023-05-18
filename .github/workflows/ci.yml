@@ -9,4 +9,11 @@ jobs:
     steps:
       - name: Hello world!
         run: echo "Hello world from github actions! 🚀"
+        
+      - name: print PR title
+        run: |
+          echo title: ${{ github.event.pull_request.title }}
+          echo id: ${{ github.event.pull_request.id }}
+          echo "--message ${{ github.event.pull_request.title }}  --alias=${{ github.event.pull_request.id }}"
+          
 

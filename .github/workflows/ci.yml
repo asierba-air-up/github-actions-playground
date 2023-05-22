@@ -19,11 +19,11 @@ jobs:
         run: echo ${{ env.TEST }}
 
       - name: test ${{ env.PREVIEW }}
-        run: echo ${{ env.PREVIEW }}
+        run: echo ${{ !env.PREVIEW }}
 
       - name: test ${{ env.PROD }}
-        run: echo ${{ env.PROD }}
+        run: echo ${{ !env.PROD }}
 
       - name: Deploy to..
-        run: echo netlify deploy --prod ${{ env.PROD }} --build --site ${{ vars.NETLIFY_SITE_ID }} --message "${{ github.ref_name }} >> ${{ github.event.head_commit.message }}"  --alias=${{ github.ref_name }}
+        run: echo netlify deploy --prod ${{ !env.PROD }} --build --site ${{ vars.NETLIFY_SITE_ID }} --message "${{ github.ref_name }} >> ${{ github.event.head_commit.message }}"  --alias=${{ github.ref_name }}
 

@@ -4,6 +4,7 @@ on: [push]
 
 env:
   PREVIEW: false
+  TEST: 'this is a test'
 
 jobs:
   build:
@@ -12,7 +13,10 @@ jobs:
     steps:
       - name: Hello world!
         run: echo "Hello world from github actions! 🚀"
-        
+
+      - name: test ${{ env.TEST }}
+        run: echo ${{ env.TEST }}
+
       - name: Deploy to..
         run: echo netlify deploy --prod ${{ !env.PREVIEW }} --build --site ${{ vars.NETLIFY_SITE_ID }} --message "${{ github.ref_name }} >> ${{ github.event.head_commit.message }}"  --alias=${{ github.ref_name }}
 

@@ -11,5 +11,5 @@ jobs:
         run: netlify --help
 
       - name: netlify-cli which
-        run: which neltify
+        run: which netlify
 

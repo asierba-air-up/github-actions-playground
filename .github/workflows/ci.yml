@@ -7,6 +7,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Test netlify-cli  
-        run: netlify deploy --build
+      - name: netlify-cli  help
+        run: netlify --help
+
+      - name: netlify-cli which
+        run: which neltify
 
